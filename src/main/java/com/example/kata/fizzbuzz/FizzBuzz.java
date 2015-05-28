@@ -8,7 +8,6 @@ public class FizzBuzz {
         this.strategies = strategies;
     }
 
-    public static final String BUZZ = "Buzz";
     private static final String DEFAULT_RESULT = "";
 
     String getFor(int n) {

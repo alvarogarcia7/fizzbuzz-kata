@@ -27,12 +27,12 @@ public class FizzBuzzTest {
 
     @Test
     public void should_return_buzz_for_multiples_of_5() {
-        assertThat(fizzbuzz(5), is(FizzBuzz.BUZZ));
+        assertThat(fizzbuzz(5), is("Buzz"));
     }
 
     @Test
     public void should_return_fizzbuzz_for_multiples_of_5_and_3_greater_or_equal_than_30() {
-        assertThat(fizzbuzz(30), is("Fizz" + FizzBuzz.BUZZ));
+        assertThat(fizzbuzz(30), is("Fizz" + "Buzz"));
     }
 
     private String fizzbuzz(int n) {
