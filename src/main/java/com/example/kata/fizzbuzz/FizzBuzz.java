@@ -4,9 +4,10 @@ public class FizzBuzz {
 
     public static final String BUZZ = "Buzz";
     public static final String FIZZ = "Fizz";
+    private static final String DEFAULT_RESULT = null;
 
     String getFizzBuzzFor(int n) {
-        String result = null;
+        String result = DEFAULT_RESULT;
         if (isDivisibleBy3(n) && n >= 6) {
             result = FIZZ;
         }
@@ -16,7 +17,7 @@ public class FizzBuzz {
         if (isDivisibleBy5(n) && isDivisibleBy3(n) && n >= 30) {
             result = FIZZ + BUZZ;
         }
-        if (result == null) {
+        if (result == DEFAULT_RESULT) {
             result = String.valueOf(n);
         }
         return result;
