@@ -9,13 +9,10 @@ public class FizzBuzz {
     String getFizzBuzzFor(int n) {
         String result = DEFAULT_RESULT;
         if (isDivisibleBy3(n) && n >= 6) {
-            result = FIZZ;
+            result += FIZZ;
         }
         if (isDivisibleBy5(n)) {
-            result = BUZZ;
-        }
-        if (isDivisibleBy5(n) && isDivisibleBy3(n) && n >= 30) {
-            result = FIZZ + BUZZ;
+            result += BUZZ;
         }
         if (result == DEFAULT_RESULT) {
             result = String.valueOf(n);
