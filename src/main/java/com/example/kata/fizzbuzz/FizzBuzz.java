@@ -6,7 +6,7 @@ public class FizzBuzz {
     public static final String FIZZ = "Fizz";
     private static final String DEFAULT_RESULT = "";
 
-    String getFizzBuzzFor(int n) {
+    String getFor(int n) {
         String result = DEFAULT_RESULT;
         if (isDivisibleBy3(n) && n >= 6) {
             result += FIZZ;

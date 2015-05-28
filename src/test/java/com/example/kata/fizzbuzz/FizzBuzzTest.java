@@ -36,7 +36,7 @@ public class FizzBuzzTest {
     }
 
     private String fizzbuzz(int n) {
-        return fizzBuzz.getFizzBuzzFor(n);
+        return fizzBuzz.getFor(n);
     }
 
 
