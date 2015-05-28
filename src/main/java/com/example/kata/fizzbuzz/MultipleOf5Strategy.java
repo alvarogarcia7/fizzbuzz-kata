@@ -13,7 +13,7 @@ public class MultipleOf5Strategy implements FizzBuzzStrategy {
     @Override
     public String apply(int n, String existingResult) {
         String result = existingResult;
-        if (isDivisibleBy5(n)) {
+        if (multipleCollaborator.isMultipleOf(n)) {
             result += BUZZ;
         }
         return result;

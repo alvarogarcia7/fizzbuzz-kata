@@ -1,8 +1,14 @@
 package com.example.kata.fizzbuzz;
 
 public class MultipleOf {
+    private final int divisor;
+
+    public MultipleOf(int divisor) {
+
+        this.divisor = divisor;
+    }
+
     public boolean isMultipleOf(int n) {
-        //TODO AGB how it is possible that this works?
-        return true;
+        return n % divisor == 0;
     }
 }

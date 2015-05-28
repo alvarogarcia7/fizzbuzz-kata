@@ -12,7 +12,7 @@ public class FizzBuzzTest {
 
     @Before
     public void setUp() {
-        this.fizzBuzz = new FizzBuzz(new MultipleOf3AndGreaterThan6Strategy(new MultipleOf()), new MultipleOf5Strategy(new MultipleOf()));
+        this.fizzBuzz = new FizzBuzz(new MultipleOf3AndGreaterThan6Strategy(new MultipleOf(3)), new MultipleOf5Strategy(new MultipleOf(5)));
     }
 
     @Test
