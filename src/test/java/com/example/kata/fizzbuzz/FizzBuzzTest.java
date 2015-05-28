@@ -22,7 +22,7 @@ public class FizzBuzzTest {
 
     @Test
     public void should_return_fizz_for_multiples_of_3_greater_or_equal_than_6() {
-        assertThat(fizzbuzz(6), is(FizzBuzz.FIZZ));
+        assertThat(fizzbuzz(6), is("Fizz"));
     }
 
     @Test
@@ -32,7 +32,7 @@ public class FizzBuzzTest {
 
     @Test
     public void should_return_fizzbuzz_for_multiples_of_5_and_3_greater_or_equal_than_30() {
-        assertThat(fizzbuzz(30), is(FizzBuzz.FIZZ + FizzBuzz.BUZZ));
+        assertThat(fizzbuzz(30), is("Fizz" + FizzBuzz.BUZZ));
     }
 
     private String fizzbuzz(int n) {

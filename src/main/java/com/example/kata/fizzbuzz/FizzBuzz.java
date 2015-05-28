@@ -9,7 +9,6 @@ public class FizzBuzz {
     }
 
     public static final String BUZZ = "Buzz";
-    public static final String FIZZ = "Fizz";
     private static final String DEFAULT_RESULT = "";
 
     String getFor(int n) {
