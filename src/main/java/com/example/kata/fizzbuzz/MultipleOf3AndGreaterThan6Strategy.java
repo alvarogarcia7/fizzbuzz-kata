@@ -4,6 +4,14 @@ public class MultipleOf3AndGreaterThan6Strategy implements FizzBuzzStrategy {
 
     public static final String FIZZ = "Fizz";
 
+    public MultipleOf3AndGreaterThan6Strategy(MultipleOf multipleCollaborator) {
+
+    }
+
+    public MultipleOf3AndGreaterThan6Strategy(){
+
+    }
+
     @Override
     public String apply(int n, String existingResult) {
         String result = existingResult;
