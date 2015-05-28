@@ -14,21 +14,11 @@ public class FizzBuzz {
     String getFor(int n) {
         String result = DEFAULT_RESULT;
         result = strategies[0].apply(n, result);
+        result = strategies[1].apply(n, result);
 
-        if (isDivisibleBy5(n)) {
-            result += BUZZ;
-        }
         if (result == DEFAULT_RESULT) {
             result = String.valueOf(n);
         }
         return result;
-    }
-
-    private boolean isDivisibleBy5(int n) {
-        return isDivisibleBy(n, 5);
-    }
-
-    private boolean isDivisibleBy(int n, int divisor) {
-        return n % divisor == 0;
     }
 }
