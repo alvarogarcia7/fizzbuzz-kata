@@ -21,6 +21,11 @@ public class FizzBuzzTest {
         assertThat(fizzbuzz(5), is("Buzz"));
     }
 
+    @Test
+    public void should_return_fizzbuzz_for_multiples_of_5_and_3_greater_or_equal_than_30() {
+        assertThat(fizzbuzz(30), is("FizzBuzz"));
+    }
+
     private String fizzbuzz(int n) {
         if(n%3 == 0 && n >= 6) {
             return "Fizz";
