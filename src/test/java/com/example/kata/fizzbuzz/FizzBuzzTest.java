@@ -1,11 +1,20 @@
 package com.example.kata.fizzbuzz;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class FizzBuzzTest {
+
+    private FizzBuzz fizzBuzz;
+
+    @Before
+    public void setUp(){
+        this.fizzBuzz = new FizzBuzz();
+    }
+
     @Test
     public void should_return_the_same_value_for_non_multiples_of_3_or_5() {
         assertThat(fizzbuzz(3), is("3"));
@@ -27,20 +36,7 @@ public class FizzBuzzTest {
     }
 
     private String fizzbuzz(int n) {
-        String result = null;
-        if (n % 3 == 0 && n >= 6) {
-            result = "Fizz";
-        }
-        if (n % 5 == 0) {
-            result = "Buzz";
-        }
-        if (n % 5 == 0 && n % 3 == 0 && n >= 30) {
-            result = "FizzBuzz";
-        }
-        if (result == null) {
-            result = String.valueOf(n);
-        }
-        return result;
+        return fizzBuzz.getFizzBuzzFor(n);
     }
 
 
