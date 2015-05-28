@@ -4,7 +4,7 @@ public class FizzBuzz {
 
     public static final String BUZZ = "Buzz";
     public static final String FIZZ = "Fizz";
-    private static final String DEFAULT_RESULT = null;
+    private static final String DEFAULT_RESULT = "";
 
     String getFizzBuzzFor(int n) {
         String result = DEFAULT_RESULT;
