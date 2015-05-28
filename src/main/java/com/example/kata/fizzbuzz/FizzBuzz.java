@@ -15,9 +15,7 @@ public class FizzBuzz {
     String getFor(int n) {
         String result = DEFAULT_RESULT;
         result = strategies[0].apply(n, result);
-        if (isDivisibleBy3(n) && n >= 6) {
-            result += FIZZ;
-        }
+
         if (isDivisibleBy5(n)) {
             result += BUZZ;
         }
