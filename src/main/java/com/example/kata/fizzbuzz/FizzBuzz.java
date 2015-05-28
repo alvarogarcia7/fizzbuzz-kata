@@ -3,17 +3,18 @@ package com.example.kata.fizzbuzz;
 public class FizzBuzz {
 
     public static final String BUZZ = "Buzz";
+    public static final String FIZZ = "Fizz";
 
     String getFizzBuzzFor(int n) {
         String result = null;
         if (isDivisibleBy3(n) && n >= 6) {
-            result = "Fizz";
+            result = FIZZ;
         }
         if (isDivisibleBy5(n)) {
             result = BUZZ;
         }
         if (isDivisibleBy5(n) && isDivisibleBy3(n) && n >= 30) {
-            result = "Fizz"+ BUZZ;
+            result = FIZZ + BUZZ;
         }
         if (result == null) {
             result = String.valueOf(n);
