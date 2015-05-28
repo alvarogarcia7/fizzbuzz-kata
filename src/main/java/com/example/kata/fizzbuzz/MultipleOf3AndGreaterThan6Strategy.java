@@ -10,10 +10,6 @@ public class MultipleOf3AndGreaterThan6Strategy implements FizzBuzzStrategy {
         this.multipleCollaborator = multipleCollaborator;
     }
 
-    public MultipleOf3AndGreaterThan6Strategy(){
-        this.multipleCollaborator = new MultipleOf();
-    }
-
     @Override
     public String apply(int n, String existingResult) {
         String result = existingResult;
