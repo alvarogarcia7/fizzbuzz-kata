@@ -18,13 +18,4 @@ public class MultipleOf3AndGreaterThan6Strategy implements FizzBuzzStrategy {
         }
         return result;
     }
-
-
-    private boolean isDivisibleBy3(int n) {
-        return isDivisibleBy(n, 3);
-    }
-
-    private boolean isDivisibleBy(int n, int divisor) {
-        return n % divisor == 0;
-    }
 }

@@ -18,12 +18,4 @@ public class MultipleOf5Strategy implements FizzBuzzStrategy {
         }
         return result;
     }
-
-    private boolean isDivisibleBy5(int n) {
-        return isDivisibleBy(n, 5);
-    }
-
-    private boolean isDivisibleBy(int n, int divisor) {
-        return n % divisor == 0;
-    }
 }
