@@ -17,6 +17,9 @@ public class FizzBuzzTest {
     }
 
     private String fizzbuzz(int n) {
+        if(n%3 == 0 && n >= 6) {
+            return "Fizz";
+        }
         return String.valueOf(n);
     }
 
