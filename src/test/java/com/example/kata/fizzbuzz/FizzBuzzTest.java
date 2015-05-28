@@ -25,6 +25,9 @@ public class FizzBuzzTest {
         if(n%3 == 0 && n >= 6) {
             return "Fizz";
         }
+        if(n%5 == 0) {
+            return "Buzz";
+        }
         return String.valueOf(n);
     }
 
