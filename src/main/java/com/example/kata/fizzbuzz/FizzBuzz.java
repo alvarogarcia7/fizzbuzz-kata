@@ -10,7 +10,7 @@ public class FizzBuzz {
             result = "Buzz";
         }
         if (isDivisibleBy5(n) && isDivisibleBy3(n) && n >= 30) {
-            result = "FizzBuzz";
+            result = "Fizz"+"Buzz";
         }
         if (result == null) {
             result = String.valueOf(n);
