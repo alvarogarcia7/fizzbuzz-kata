@@ -3,11 +3,11 @@ package com.example.kata.fizzbuzz;
 import org.hamcrest.MatcherAssert;
 import org.junit.Test;
 
+import static com.example.kata.fizzbuzz.util.TestDoubles.mock;
 import static com.example.kata.fizzbuzz.util.TestDoubles.stub;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.Matchers.anyInt;
 import static org.mockito.Mockito.doReturn;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 public class MultipleOf3AndGreaterThan6StrategyTest {
