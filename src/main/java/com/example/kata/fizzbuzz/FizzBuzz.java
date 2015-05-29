@@ -10,10 +10,7 @@ public class FizzBuzz {
         this.fizzBuzzResult = fizzBuzzResult;
     }
 
-    private static final String DEFAULT_RESULT = "";
-
     String getFor(int n) {
-        String result = DEFAULT_RESULT;
         for(FizzBuzzStrategy current : strategies) {
             current.apply(n, fizzBuzzResult);
         }
