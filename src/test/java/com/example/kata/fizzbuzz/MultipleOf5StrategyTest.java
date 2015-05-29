@@ -13,13 +13,14 @@ import static org.mockito.Mockito.verify;
 public class MultipleOf5StrategyTest {
 
     private static final int ANY_VALUE = 0;
+    private FizzBuzzStrategy sut;
 
     @Test
     public void should_ask_the_multiplication_collaborator(){
         final MultipleOf multipleCollaborator = mock(MultipleOf.class);
-        FizzBuzzStrategy sut = new MultipleOf5Strategy(multipleCollaborator);
+        sut = new MultipleOf5Strategy(multipleCollaborator);
 
-        sut.apply(1,"");
+        sut.apply(1, "");
 
         verify(multipleCollaborator).isMultipleOf(1);
     }
@@ -29,9 +30,9 @@ public class MultipleOf5StrategyTest {
         final MultipleOf multipleCollaborator = stub(MultipleOf.class);
         doReturn(true).when(multipleCollaborator).isMultipleOf(anyInt());
 
-        final MultipleOf5Strategy sut = new MultipleOf5Strategy(multipleCollaborator);
+        sut = new MultipleOf5Strategy(multipleCollaborator);
 
         MatcherAssert.assertThat(sut.apply(ANY_VALUE, ""), is("Buzz"));
-    } 
+    }
 
 }
