@@ -18,7 +18,7 @@ public class MultipleOf5StrategyTest {
     @Test
     public void should_ask_the_multiplication_collaborator(){
         final MultipleOf multipleCollaborator = mock(MultipleOf.class);
-        sut = new MultipleOf5Strategy(multipleCollaborator);
+        sut = sutWith(multipleCollaborator);
 
         sut.apply(1, "");
 
@@ -30,9 +30,13 @@ public class MultipleOf5StrategyTest {
         final MultipleOf multipleCollaborator = stub(MultipleOf.class);
         doReturn(true).when(multipleCollaborator).isMultipleOf(anyInt());
 
-        sut = new MultipleOf5Strategy(multipleCollaborator);
+        sut = sutWith(multipleCollaborator);
 
         MatcherAssert.assertThat(sut.apply(ANY_VALUE, ""), is("Buzz"));
+    }
+
+    private MultipleOf5Strategy sutWith (final MultipleOf multipleCollaborator) {
+        return new MultipleOf5Strategy(multipleCollaborator);
     }
 
 }
