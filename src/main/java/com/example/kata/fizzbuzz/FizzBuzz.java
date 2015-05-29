@@ -15,7 +15,7 @@ public class FizzBuzz {
     String getFor(int n) {
         String result = DEFAULT_RESULT;
         for(FizzBuzzStrategy current : strategies) {
-            current.apply(n, result, fizzBuzzResult);
+            current.apply(n, fizzBuzzResult);
         }
 
         if (fizzBuzzResult.isEmpty()) {
