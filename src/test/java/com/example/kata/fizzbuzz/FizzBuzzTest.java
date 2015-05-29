@@ -34,7 +34,7 @@ public class FizzBuzzTest {
 //				}),
 //				new MultipleOf5Strategy(new MultipleOf(5),fizzBuzzResult));
 
-		this.fizzBuzz = new FizzBuzz(null,
+		this.fizzBuzz = new FizzBuzz(fizzBuzzResult,
 				new MultipleOf3AndGreaterThan6Strategy(new MultipleOf(3), fizzBuzzResult),
 				new MultipleOf5Strategy(new MultipleOf(5), fizzBuzzResult));
 	}

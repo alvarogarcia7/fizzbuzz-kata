@@ -20,7 +20,8 @@ public class FizzBuzz {
 
         if (DEFAULT_RESULT.equals(result)) {
             result = String.valueOf(n);
+            fizzBuzzResult.append(result);
         }
-        return result;
+        return fizzBuzzResult.get();
     }
 }
