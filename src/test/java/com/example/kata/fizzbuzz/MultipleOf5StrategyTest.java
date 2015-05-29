@@ -27,13 +27,18 @@ public class MultipleOf5StrategyTest {
 
     @Test
     public void should_add_fizz_when_the_condition_holds () {
-        final MultipleOf multipleCollaborator = stub(MultipleOf.class);
-        doReturn(true).when(multipleCollaborator).isMultipleOf(anyInt());
+        final MultipleOf multipleCollaborator = getMultipleCollaboratorThatAlwaysMatchesTheCondition();
         sut = sutWith(multipleCollaborator);
 
         final String result = sut.apply(ANY_VALUE, "");
 
         assertThat(result, is("Buzz"));
+    }
+
+    private MultipleOf getMultipleCollaboratorThatAlwaysMatchesTheCondition () {
+        final MultipleOf multipleCollaborator = stub(MultipleOf.class);
+        doReturn(true).when(multipleCollaborator).isMultipleOf(anyInt());
+        return multipleCollaborator;
     }
 
     private MultipleOf5Strategy sutWith (final MultipleOf multipleCollaborator) {
