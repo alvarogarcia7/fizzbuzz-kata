@@ -26,10 +26,6 @@ public class MultipleOf5StrategyTest {
         verify(multipleMock).isMultipleOf(ANY_VALUE);
     }
 
-    private String act () {
-        return sut.apply(ANY_VALUE, "");
-    }
-
     @Test
     public void should_add_fizz_when_the_condition_holds () {
         final MultipleOf multipleCollaborator = getMultipleCollaboratorThatAlwaysMatchesTheCondition();
@@ -48,6 +44,10 @@ public class MultipleOf5StrategyTest {
 
     private MultipleOf5Strategy sutWith (final MultipleOf multipleCollaborator) {
         return new MultipleOf5Strategy(multipleCollaborator);
+    }
+
+    private String act () {
+        return sut.apply(ANY_VALUE, "");
     }
 
 }
