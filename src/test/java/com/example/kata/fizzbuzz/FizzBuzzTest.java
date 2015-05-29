@@ -52,9 +52,9 @@ public class FizzBuzzTest {
 		final FizzBuzzStrategy third = mock(FizzBuzzStrategy.class);
 		final FizzBuzz sut = new FizzBuzz(fizzBuzzResult, first, second, third);
 		sut.getFor(1);
-		verify(first).apply(anyInt(), any(FizzBuzzResult.class));
-		verify(second).apply(anyInt(), any(FizzBuzzResult.class));
-		verify(third).apply(anyInt(), any(FizzBuzzResult.class));
+		verify(first).apply(anyInt());
+		verify(second).apply(anyInt());
+		verify(third).apply(anyInt());
 	}
 
 	private String fizzbuzz (int n) {

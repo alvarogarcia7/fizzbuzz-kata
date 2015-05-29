@@ -15,7 +15,7 @@ public class MultipleOf3AndGreaterThan6Strategy implements FizzBuzzStrategy {
 
 
     @Override
-    public void apply (int n, final FizzBuzzResult fizzBuzzResult) {
+    public void apply (int n) {
         if (multipleCollaborator.isMultipleOf(n) && n >= 6) {
             fizzBuzzResult.append(FIZZ);
         }

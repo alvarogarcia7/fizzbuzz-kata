@@ -12,7 +12,7 @@ public class FizzBuzz {
 
     String getFor(int n) {
         for(FizzBuzzStrategy current : strategies) {
-            current.apply(n, fizzBuzzResult);
+            current.apply(n);
         }
 
         if (fizzBuzzResult.isEmpty()) {
