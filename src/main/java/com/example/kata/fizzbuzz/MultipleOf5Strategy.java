@@ -13,10 +13,9 @@ public class MultipleOf5Strategy implements FizzBuzzStrategy {
     }
 
     @Override
-    public String apply(int n, String existingResult) {
+    public void apply (int n, String existingResult, final FizzBuzzResult fizzBuzzResult) {
         if (multipleCollaborator.isMultipleOf(n)) {
-            fizzBuzzResult.append(BUZZ);
+            this.fizzBuzzResult.append(BUZZ);
         }
-        return fizzBuzzResult.get();
     }
 }

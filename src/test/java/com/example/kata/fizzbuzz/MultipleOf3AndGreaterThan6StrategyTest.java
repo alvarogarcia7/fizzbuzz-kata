@@ -27,7 +27,7 @@ public class MultipleOf3AndGreaterThan6StrategyTest {
         final MultipleOf multipleCollaborator = mock(MultipleOf.class);
         sut = sutWith(multipleCollaborator);
 
-        sut.apply(ANY_VALUE,"");
+        sut.apply(ANY_VALUE,"", fizzBuzzResult);
 
         verify(multipleCollaborator).isMultipleOf(ANY_VALUE);
     }
@@ -43,7 +43,8 @@ public class MultipleOf3AndGreaterThan6StrategyTest {
     }
 
     private String fizzBuzz (final int n) {
-        return sut.apply(n, "");
+                sut.apply(n, "", fizzBuzzResult);
+        return fizzBuzzResult.get();
     }
 
     private MultipleOf multipleThatAlwaysMatchesTheCondition () {

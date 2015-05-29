@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyInt;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.mock;
@@ -67,9 +68,9 @@ public class FizzBuzzTest {
 		final FizzBuzzStrategy third = mock(FizzBuzzStrategy.class);
 		final FizzBuzz sut = new FizzBuzz(fizzBuzzResult, first, second, third);
 		sut.getFor(1);
-		verify(first).apply(anyInt(), anyString());
-		verify(second).apply(anyInt(), anyString());
-		verify(third).apply(anyInt(), anyString());
+		verify(first).apply(anyInt(), anyString(), any(FizzBuzzResult.class));
+		verify(second).apply(anyInt(), anyString(), any(FizzBuzzResult.class));
+		verify(third).apply(anyInt(), anyString(), any(FizzBuzzResult.class));
 	}
 
 	private String fizzbuzz (int n) {

@@ -15,10 +15,10 @@ public class FizzBuzz {
     String getFor(int n) {
         String result = DEFAULT_RESULT;
         for(FizzBuzzStrategy current : strategies) {
-            result = current.apply(n, result);
+            current.apply(n, result, fizzBuzzResult);
         }
 
-        if (DEFAULT_RESULT.equals(result)) {
+        if (fizzBuzzResult.isEmpty()) {
             fizzBuzzResult.append(String.valueOf(n));
         }
         return fizzBuzzResult.get();

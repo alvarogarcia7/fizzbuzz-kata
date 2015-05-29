@@ -54,7 +54,7 @@ public class MultipleOf5StrategyTest {
     }
 
     private String act () {
-        sut.apply(ANY_VALUE, "");
+        sut.apply(ANY_VALUE, "", fizzBuzzResult);
         return fizzBuzzResult.get();
     }
 

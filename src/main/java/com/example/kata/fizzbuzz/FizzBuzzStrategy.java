@@ -1,5 +1,5 @@
 package com.example.kata.fizzbuzz;
 
 public interface FizzBuzzStrategy {
-    public String apply(int n, String existingResult);
+    public void apply (int n, String existingResult, final FizzBuzzResult fizzBuzzResult);
 }
