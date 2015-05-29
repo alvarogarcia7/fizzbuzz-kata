@@ -21,9 +21,13 @@ public class MultipleOf5StrategyTest {
         multipleMock = mock(MultipleOf.class);
         sut = sutWith(multipleMock);
 
-        sut.apply(ANY_VALUE, "");
+        act();
 
         verify(multipleMock).isMultipleOf(ANY_VALUE);
+    }
+
+    private String act () {
+        return sut.apply(ANY_VALUE, "");
     }
 
     @Test
@@ -31,7 +35,7 @@ public class MultipleOf5StrategyTest {
         final MultipleOf multipleCollaborator = getMultipleCollaboratorThatAlwaysMatchesTheCondition();
         sut = sutWith(multipleCollaborator);
 
-        final String result = sut.apply(ANY_VALUE, "");
+        final String result = act();
 
         assertThat(result, is("Buzz"));
     }
