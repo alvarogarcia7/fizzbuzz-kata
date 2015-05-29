@@ -60,7 +60,6 @@ public class FizzBuzzTest {
 	private String fizzbuzz (int n) {
 		fizzBuzz.getFor(n);
 		return fizzBuzzResult.get();
-//		return fizzBuzzResult.get();
 	}
 
 
