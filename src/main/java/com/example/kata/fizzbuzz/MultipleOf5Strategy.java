@@ -19,6 +19,6 @@ public class MultipleOf5Strategy implements FizzBuzzStrategy {
             fizzBuzzResult.append(BUZZ);
             result += BUZZ;
         }
-        return result;
+        return fizzBuzzResult.get();
     }
 }
