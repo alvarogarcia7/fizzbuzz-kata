@@ -14,15 +14,16 @@ public class MultipleOf5StrategyTest {
 
     private static final int ANY_VALUE = 0;
     private FizzBuzzStrategy sut;
+    private MultipleOf multipleMock;
 
     @Test
     public void should_ask_the_multiplication_collaborator(){
-        final MultipleOf multipleCollaborator = mock(MultipleOf.class);
-        sut = sutWith(multipleCollaborator);
+        multipleMock = mock(MultipleOf.class);
+        sut = sutWith(multipleMock);
 
         sut.apply(1, "");
 
-        verify(multipleCollaborator).isMultipleOf(1);
+        verify(multipleMock).isMultipleOf(1);
     }
 
     @Test
