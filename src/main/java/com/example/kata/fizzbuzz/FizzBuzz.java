@@ -12,8 +12,9 @@ public class FizzBuzz {
 
     String getFor(int n) {
         String result = DEFAULT_RESULT;
-        result = strategies[0].apply(n, result);
-        result = strategies[1].apply(n, result);
+        for(FizzBuzzStrategy current : strategies) {
+            result = current.apply(n, result);
+        }
 
         if (result == DEFAULT_RESULT) {
             result = String.valueOf(n);
