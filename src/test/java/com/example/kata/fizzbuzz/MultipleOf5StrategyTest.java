@@ -2,7 +2,7 @@ package com.example.kata.fizzbuzz;
 
 import org.junit.Test;
 
-import static com.example.kata.fizzbuzz.util.StubBuilder.stub;
+import static com.example.kata.fizzbuzz.util.TestDoubles.stub;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.Matchers.anyInt;
