@@ -18,7 +18,7 @@ public class FizzBuzzTest {
 	public void setUp () {
 		fizzBuzzResult = new FizzBuzzResult();
 
-		this.fizzBuzz = new FizzBuzz(fizzBuzzResult,
+		this.fizzBuzz = new FizzBuzz(
 				new MultipleOf3AndGreaterThan6Strategy(new MultipleOf(3), fizzBuzzResult),
 				new MultipleOf5Strategy(new MultipleOf(5), fizzBuzzResult),
 				new TheNumberStrategy(fizzBuzzResult));
@@ -50,7 +50,7 @@ public class FizzBuzzTest {
 		final FizzBuzzStrategy first = mock(FizzBuzzStrategy.class);
 		final FizzBuzzStrategy second = mock(FizzBuzzStrategy.class);
 		final FizzBuzzStrategy third = mock(FizzBuzzStrategy.class);
-		final FizzBuzz sut = new FizzBuzz(fizzBuzzResult, first, second, third);
+		final FizzBuzz sut = new FizzBuzz(first, second, third);
 		sut.getFor(1);
 		verify(first).apply(anyInt());
 		verify(second).apply(anyInt());
@@ -58,7 +58,8 @@ public class FizzBuzzTest {
 	}
 
 	private String fizzbuzz (int n) {
-		return fizzBuzz.getFor(n);
+		fizzBuzz.getFor(n);
+		return fizzBuzzResult.get();
 //		return fizzBuzzResult.get();
 	}
 
