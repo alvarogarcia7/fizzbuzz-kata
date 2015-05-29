@@ -29,10 +29,11 @@ public class MultipleOf5StrategyTest {
     public void should_add_fizz_when_the_condition_holds () {
         final MultipleOf multipleCollaborator = stub(MultipleOf.class);
         doReturn(true).when(multipleCollaborator).isMultipleOf(anyInt());
-
         sut = sutWith(multipleCollaborator);
 
-        MatcherAssert.assertThat(sut.apply(ANY_VALUE, ""), is("Buzz"));
+        final String result = sut.apply(ANY_VALUE, "");
+
+        MatcherAssert.assertThat(result, is("Buzz"));
     }
 
     private MultipleOf5Strategy sutWith (final MultipleOf multipleCollaborator) {
