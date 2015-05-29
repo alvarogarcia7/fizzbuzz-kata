@@ -19,8 +19,7 @@ public class FizzBuzz {
         }
 
         if (DEFAULT_RESULT.equals(result)) {
-            result = String.valueOf(n);
-            fizzBuzzResult.append(result);
+            fizzBuzzResult.append(String.valueOf(n));
         }
         return fizzBuzzResult.get();
     }
