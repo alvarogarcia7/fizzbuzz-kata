@@ -19,21 +19,6 @@ public class FizzBuzzTest {
 	@Before
 	public void setUp () {
 		fizzBuzzResult = new FizzBuzzResult();
-		final MultipleOf multipleCollaborator = new MultipleOf(3);
-//		this.fizzBuzz = new FizzBuzz(fizzBuzzResult, new MultipleOf3AndGreaterThan6Strategy(new Executor(),
-//				new Condition() {
-//					@Override
-//					public boolean appliesTo (int n) {
-//						return multipleCollaborator.isMultipleOf(n) && n >= 6;
-//					}
-//				},
-//				new Action(fizzBuzzResult){
-//					@Override
-//					public void execute () {
-//						fizzBuzzResult.append("Fizz");
-//					}
-//				}),
-//				new MultipleOf5Strategy(new MultipleOf(5),fizzBuzzResult));
 
 		this.fizzBuzz = new FizzBuzz(fizzBuzzResult,
 				new MultipleOf3AndGreaterThan6Strategy(new MultipleOf(3), fizzBuzzResult),
