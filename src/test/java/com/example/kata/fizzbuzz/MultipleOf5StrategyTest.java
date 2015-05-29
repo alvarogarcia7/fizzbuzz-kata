@@ -21,9 +21,9 @@ public class MultipleOf5StrategyTest {
         multipleMock = mock(MultipleOf.class);
         sut = sutWith(multipleMock);
 
-        sut.apply(1, "");
+        sut.apply(ANY_VALUE, "");
 
-        verify(multipleMock).isMultipleOf(1);
+        verify(multipleMock).isMultipleOf(ANY_VALUE);
     }
 
     @Test
