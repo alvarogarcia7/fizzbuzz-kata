@@ -3,6 +3,7 @@ package com.example.kata.fizzbuzz;
 import org.hamcrest.MatcherAssert;
 import org.junit.Test;
 
+import static com.example.kata.fizzbuzz.util.StubBuilder.stub;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.Matchers.anyInt;
 import static org.mockito.Mockito.doReturn;
@@ -31,10 +32,6 @@ public class MultipleOf5StrategyTest {
         final MultipleOf5Strategy sut = new MultipleOf5Strategy(multipleCollaborator);
 
         MatcherAssert.assertThat(sut.apply(ANY_VALUE, ""), is("Buzz"));
-    }
-
-    private <T> T stub (final Class<T> clazz) {
-        return mock(clazz);
-    }
+    } 
 
 }
