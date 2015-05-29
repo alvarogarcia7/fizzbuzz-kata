@@ -14,10 +14,6 @@ public class FizzBuzz {
         for(FizzBuzzStrategy current : strategies) {
             current.apply(n);
         }
-
-        if (fizzBuzzResult.isEmpty()) {
-            fizzBuzzResult.append(String.valueOf(n));
-        }
         return fizzBuzzResult.get();
     }
 }
