@@ -12,14 +12,16 @@ import static org.mockito.Mockito.verify;
 
 public class MultipleOf3AndGreaterThan6StrategyTest {
 
+    private int ANY_VALUE = 1;
+
     @Test
     public void should_ask_the_multiplication_collaborator(){
         final MultipleOf multipleCollaborator = mock(MultipleOf.class);
         MultipleOf3AndGreaterThan6Strategy sut = new MultipleOf3AndGreaterThan6Strategy(multipleCollaborator);
 
-        sut.apply(1,"");
+        sut.apply(ANY_VALUE,"");
 
-        verify(multipleCollaborator).isMultipleOf(1);
+        verify(multipleCollaborator).isMultipleOf(ANY_VALUE);
     }
 
     @Test
