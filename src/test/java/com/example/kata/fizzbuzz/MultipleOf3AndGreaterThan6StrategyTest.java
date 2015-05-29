@@ -13,11 +13,12 @@ import static org.mockito.Mockito.verify;
 public class MultipleOf3AndGreaterThan6StrategyTest {
 
     private int ANY_VALUE = 1;
+    private MultipleOf3AndGreaterThan6Strategy sut;
 
     @Test
     public void should_ask_the_multiplication_collaborator(){
         final MultipleOf multipleCollaborator = mock(MultipleOf.class);
-        MultipleOf3AndGreaterThan6Strategy sut = new MultipleOf3AndGreaterThan6Strategy(multipleCollaborator);
+        sut = sutWith(multipleCollaborator);
 
         sut.apply(ANY_VALUE,"");
 
@@ -26,12 +27,22 @@ public class MultipleOf3AndGreaterThan6StrategyTest {
 
     @Test
     public void should_add_fizz_when_the_condition_holds () {
+        final MultipleOf multipleCollaborator = multipleThatAlwaysMatchesTheCondition();
+        sut = sutWith(multipleCollaborator);
+
+        final String result = sut.apply(6, "");
+
+        MatcherAssert.assertThat(result, is("Fizz"));
+    }
+
+    private MultipleOf multipleThatAlwaysMatchesTheCondition () {
         final MultipleOf multipleCollaborator = stub(MultipleOf.class);
         doReturn(true).when(multipleCollaborator).isMultipleOf(anyInt());
+        return multipleCollaborator;
+    }
 
-        final MultipleOf3AndGreaterThan6Strategy sut = new MultipleOf3AndGreaterThan6Strategy(multipleCollaborator);
-
-        MatcherAssert.assertThat(sut.apply(6,""), is("Fizz"));
+    private MultipleOf3AndGreaterThan6Strategy sutWith (final MultipleOf multipleCollaborator) {
+        return new MultipleOf3AndGreaterThan6Strategy(multipleCollaborator);
     }
 
 }
