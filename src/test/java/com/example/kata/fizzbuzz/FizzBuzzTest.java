@@ -5,6 +5,10 @@ import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Matchers.anyInt;
+import static org.mockito.Matchers.anyString;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 public class FizzBuzzTest {
 
@@ -33,6 +37,19 @@ public class FizzBuzzTest {
     @Test
     public void should_return_fizzbuzz_for_multiples_of_5_and_3_greater_or_equal_than_30() {
         assertThat(fizzbuzz(30), is("Fizz" + "Buzz"));
+    }
+
+    @Test
+    public void should_use_all_injected_strategies () {
+
+        final FizzBuzzStrategy first = mock(FizzBuzzStrategy.class);
+        final FizzBuzzStrategy second = mock(FizzBuzzStrategy.class);
+        final FizzBuzzStrategy third = mock(FizzBuzzStrategy.class);
+        final FizzBuzz sut = new FizzBuzz(first, second, third);
+        sut.getFor(1);
+        verify(first).apply(anyInt(),anyString());
+        verify(second).apply(anyInt(),anyString());
+        verify(third).apply(anyInt(),anyString());
     }
 
     private String fizzbuzz(int n) {
