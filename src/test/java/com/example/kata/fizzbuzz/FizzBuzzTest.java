@@ -12,49 +12,70 @@ import static org.mockito.Mockito.verify;
 
 public class FizzBuzzTest {
 
-    private FizzBuzz fizzBuzz;
+	private FizzBuzz fizzBuzz;
+	private FizzBuzzResult fizzBuzzResult;
 
-    @Before
-    public void setUp() {
-        this.fizzBuzz = new FizzBuzz(new MultipleOf3AndGreaterThan6Strategy(new MultipleOf(3)), new MultipleOf5Strategy(new MultipleOf(5)));
-    }
+	@Before
+	public void setUp () {
+		fizzBuzzResult = new FizzBuzzResult();
+		final MultipleOf multipleCollaborator = new MultipleOf(3);
+//		this.fizzBuzz = new FizzBuzz(fizzBuzzResult, new MultipleOf3AndGreaterThan6Strategy(new Executor(),
+//				new Condition() {
+//					@Override
+//					public boolean appliesTo (int n) {
+//						return multipleCollaborator.isMultipleOf(n) && n >= 6;
+//					}
+//				},
+//				new Action(fizzBuzzResult){
+//					@Override
+//					public void execute () {
+//						fizzBuzzResult.append("Fizz");
+//					}
+//				}),
+//				new MultipleOf5Strategy(new MultipleOf(5),fizzBuzzResult));
 
-    @Test
-    public void should_return_the_same_value_for_non_multiples_of_3_or_5() {
-        assertThat(fizzbuzz(3), is("3"));
-    }
+		this.fizzBuzz = new FizzBuzz(null,
+				new MultipleOf3AndGreaterThan6Strategy(new MultipleOf(3), fizzBuzzResult),
+				new MultipleOf5Strategy(new MultipleOf(5), fizzBuzzResult));
+	}
 
-    @Test
-    public void should_return_fizz_for_multiples_of_3_greater_or_equal_than_6() {
-        assertThat(fizzbuzz(6), is("Fizz"));
-    }
+	@Test
+	public void should_return_the_same_value_for_non_multiples_of_3_or_5 () {
+		assertThat(fizzbuzz(3), is("3"));
+	}
 
-    @Test
-    public void should_return_buzz_for_multiples_of_5() {
-        assertThat(fizzbuzz(5), is("Buzz"));
-    }
+	@Test
+	public void should_return_fizz_for_multiples_of_3_greater_or_equal_than_6 () {
+		assertThat(fizzbuzz(6), is("Fizz"));
+	}
 
-    @Test
-    public void should_return_fizzbuzz_for_multiples_of_5_and_3_greater_or_equal_than_30() {
-        assertThat(fizzbuzz(30), is("Fizz" + "Buzz"));
-    }
+	@Test
+	public void should_return_buzz_for_multiples_of_5 () {
+		assertThat(fizzbuzz(5), is("Buzz"));
+	}
 
-    @Test
-    public void should_use_all_injected_strategies () {
+	@Test
+	public void should_return_fizzbuzz_for_multiples_of_5_and_3_greater_or_equal_than_30 () {
+		assertThat(fizzbuzz(30), is("Fizz" + "Buzz"));
+	}
 
-        final FizzBuzzStrategy first = mock(FizzBuzzStrategy.class);
-        final FizzBuzzStrategy second = mock(FizzBuzzStrategy.class);
-        final FizzBuzzStrategy third = mock(FizzBuzzStrategy.class);
-        final FizzBuzz sut = new FizzBuzz(first, second, third);
-        sut.getFor(1);
-        verify(first).apply(anyInt(),anyString());
-        verify(second).apply(anyInt(),anyString());
-        verify(third).apply(anyInt(),anyString());
-    }
+	@Test
+	public void should_use_all_injected_strategies () {
 
-    private String fizzbuzz(int n) {
-        return fizzBuzz.getFor(n);
-    }
+		final FizzBuzzStrategy first = mock(FizzBuzzStrategy.class);
+		final FizzBuzzStrategy second = mock(FizzBuzzStrategy.class);
+		final FizzBuzzStrategy third = mock(FizzBuzzStrategy.class);
+		final FizzBuzz sut = new FizzBuzz(fizzBuzzResult, first, second, third);
+		sut.getFor(1);
+		verify(first).apply(anyInt(), anyString());
+		verify(second).apply(anyInt(), anyString());
+		verify(third).apply(anyInt(), anyString());
+	}
+
+	private String fizzbuzz (int n) {
+		return fizzBuzz.getFor(n);
+//		return fizzBuzzResult.get();
+	}
 
 
 }

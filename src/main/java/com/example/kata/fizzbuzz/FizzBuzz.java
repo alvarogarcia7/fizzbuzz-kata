@@ -3,9 +3,11 @@ package com.example.kata.fizzbuzz;
 public class FizzBuzz {
 
     private final FizzBuzzStrategy[] strategies;
+    private final FizzBuzzResult fizzBuzzResult;
 
-    public FizzBuzz(FizzBuzzStrategy... strategies){
+    public FizzBuzz (final FizzBuzzResult fizzBuzzResult, FizzBuzzStrategy... strategies){
         this.strategies = strategies;
+        this.fizzBuzzResult = fizzBuzzResult;
     }
 
     private static final String DEFAULT_RESULT = "";
@@ -16,7 +18,7 @@ public class FizzBuzz {
             result = current.apply(n, result);
         }
 
-        if (result == DEFAULT_RESULT) {
+        if (DEFAULT_RESULT.equals(result)) {
             result = String.valueOf(n);
         }
         return result;

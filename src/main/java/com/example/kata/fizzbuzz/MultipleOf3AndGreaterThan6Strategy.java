@@ -1,21 +1,26 @@
 package com.example.kata.fizzbuzz;
 
+
 public class MultipleOf3AndGreaterThan6Strategy implements FizzBuzzStrategy {
 
-    public static final String FIZZ = "Fizz";
+    private static final String FIZZ = "Fizz";
     private final MultipleOf multipleCollaborator;
+    private final FizzBuzzResult fizzBuzzResult;
 
-    public MultipleOf3AndGreaterThan6Strategy(MultipleOf multipleCollaborator) {
+    public MultipleOf3AndGreaterThan6Strategy (MultipleOf multipleCollaborator, final FizzBuzzResult fizzBuzzResult) {
 
         this.multipleCollaborator = multipleCollaborator;
+        this.fizzBuzzResult = fizzBuzzResult;
     }
 
+
     @Override
-    public String apply(int n, String existingResult) {
-        String result = existingResult;
+    public String apply (int n, String existingResult) {
         if (multipleCollaborator.isMultipleOf(n) && n >= 6) {
-            result += FIZZ;
+            fizzBuzzResult.append(FIZZ);
         }
-        return result;
+
+        return fizzBuzzResult.get();
     }
+
 }

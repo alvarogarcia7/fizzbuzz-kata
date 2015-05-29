@@ -1,5 +1,6 @@
 package com.example.kata.fizzbuzz;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static com.example.kata.fizzbuzz.util.TestDoubles.mock;
@@ -15,6 +16,12 @@ public class MultipleOf5StrategyTest {
     private static final int ANY_VALUE = 0;
     private FizzBuzzStrategy sut;
     private MultipleOf multipleMock;
+    private FizzBuzzResult fizzBuzzResult;
+
+    @Before
+    public void setUp () throws Exception {
+        fizzBuzzResult = new FizzBuzzResult();
+    }
 
     @Test
     public void should_ask_the_multiplication_collaborator(){
@@ -43,11 +50,12 @@ public class MultipleOf5StrategyTest {
     }
 
     private MultipleOf5Strategy sutWith (final MultipleOf multipleCollaborator) {
-        return new MultipleOf5Strategy(multipleCollaborator);
+        return new MultipleOf5Strategy(multipleCollaborator, fizzBuzzResult);
     }
 
     private String act () {
-        return sut.apply(ANY_VALUE, "");
+        sut.apply(ANY_VALUE, "");
+        return fizzBuzzResult.get();
     }
 
 }

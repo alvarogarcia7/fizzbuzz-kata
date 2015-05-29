@@ -1,10 +1,11 @@
 package com.example.kata.fizzbuzz;
 
-import org.hamcrest.MatcherAssert;
+import org.junit.Before;
 import org.junit.Test;
 
 import static com.example.kata.fizzbuzz.util.TestDoubles.mock;
 import static com.example.kata.fizzbuzz.util.TestDoubles.stub;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.Matchers.anyInt;
 import static org.mockito.Mockito.doReturn;
@@ -14,6 +15,12 @@ public class MultipleOf3AndGreaterThan6StrategyTest {
 
     private int ANY_VALUE = 1;
     private MultipleOf3AndGreaterThan6Strategy sut;
+    private FizzBuzzResult fizzBuzzResult;
+
+    @Before
+    public void setUp () {
+        fizzBuzzResult = new FizzBuzzResult();
+    }
 
     @Test
     public void should_ask_the_multiplication_collaborator(){
@@ -30,9 +37,13 @@ public class MultipleOf3AndGreaterThan6StrategyTest {
         final MultipleOf multipleCollaborator = multipleThatAlwaysMatchesTheCondition();
         sut = sutWith(multipleCollaborator);
 
-        final String result = sut.apply(6, "");
+        final String result = fizzBuzz(6);
 
-        MatcherAssert.assertThat(result, is("Fizz"));
+        assertThat(result, is("Fizz"));
+    }
+
+    private String fizzBuzz (final int n) {
+        return sut.apply(n, "");
     }
 
     private MultipleOf multipleThatAlwaysMatchesTheCondition () {
@@ -42,7 +53,7 @@ public class MultipleOf3AndGreaterThan6StrategyTest {
     }
 
     private MultipleOf3AndGreaterThan6Strategy sutWith (final MultipleOf multipleCollaborator) {
-        return new MultipleOf3AndGreaterThan6Strategy(multipleCollaborator);
+        return new MultipleOf3AndGreaterThan6Strategy(multipleCollaborator, fizzBuzzResult);
     }
 
 }
