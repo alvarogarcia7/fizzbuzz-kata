@@ -49,12 +49,10 @@ public class FizzBuzzTest {
 
 		final FizzBuzzStrategy first = mock(FizzBuzzStrategy.class);
 		final FizzBuzzStrategy second = mock(FizzBuzzStrategy.class);
-		final FizzBuzzStrategy third = mock(FizzBuzzStrategy.class);
-		final FizzBuzz sut = new FizzBuzz(first, second, third);
+		final FizzBuzz sut = new FizzBuzz(first, second);
 		sut.getFor(1);
 		verify(first).apply(anyInt());
 		verify(second).apply(anyInt());
-		verify(third).apply(anyInt());
 	}
 
 	private String fizzbuzz (int n) {
