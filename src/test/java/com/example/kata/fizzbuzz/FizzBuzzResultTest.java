@@ -23,6 +23,14 @@ public class FizzBuzzResultTest {
 	}
 
 	@Test
+	public void should_not_be_empty_after_adding_an_empty_suffix () {
+
+		fizzBuzzResult.append("");
+
+		assertThat(fizzBuzzResult.isEmpty(), is(true));
+	}
+
+	@Test
 	public void should_not_be_empty_after_adding_a_suffix () {
 
 		append();
