@@ -58,14 +58,16 @@ public class MultipleOf3AndGreaterThan6StrategyTest {
     }
 
     private MultipleOf multipleThatAlwaysMatchesTheCondition () {
-        final MultipleOf multipleCollaborator = stub(MultipleOf.class);
-        doReturn(true).when(multipleCollaborator).isMultipleOf(anyInt());
-        return multipleCollaborator;
+        return multipleThatAlwaysReturns(true);
     }
 
     private MultipleOf multipleThatNeverMatchesTheCondition () {
+        return multipleThatAlwaysReturns(false);
+    }
+
+    private MultipleOf multipleThatAlwaysReturns (final boolean isConditionMatched) {
         final MultipleOf multipleCollaborator = stub(MultipleOf.class);
-        doReturn(false).when(multipleCollaborator).isMultipleOf(anyInt());
+        doReturn(isConditionMatched).when(multipleCollaborator).isMultipleOf(anyInt());
         return multipleCollaborator;
     }
 
