@@ -19,7 +19,7 @@ public class FizzBuzzResultTest {
 	@Test
 	public void should_be_empty_by_default () {
 
-		assertThat(fizzBuzzResult.isEmpty(), is(true));
+		assertThat(isEmpty(), is(true));
 	}
 
 	@Test
@@ -27,7 +27,7 @@ public class FizzBuzzResultTest {
 
 		append("");
 
-		assertThat(fizzBuzzResult.isEmpty(), is(true));
+		assertThat(isEmpty(), is(true));
 	}
 
 	@Test
@@ -35,7 +35,7 @@ public class FizzBuzzResultTest {
 
 		append(ANY_STRING);
 
-		assertThat(fizzBuzzResult.isEmpty(), is(false));
+		assertThat(isEmpty(), is(false));
 	}
 
 	@Test
@@ -50,4 +50,7 @@ public class FizzBuzzResultTest {
 		fizzBuzzResult.append(anyString);
 	}
 
+	private boolean isEmpty () {
+		return fizzBuzzResult.isEmpty();
+	}
 }
