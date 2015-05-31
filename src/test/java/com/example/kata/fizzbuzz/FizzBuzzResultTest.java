@@ -8,7 +8,7 @@ import static org.hamcrest.Matchers.is;
 
 public class FizzBuzzResultTest {
 
-	public static final String ANY_STRING = "any string, spaces and numbers (0123456789) are allowed";
+	private static final String ANY_STRING = "any string, spaces and numbers (0123456789) are allowed";
 	private FizzBuzzResult fizzBuzzResult;
 
 	@Before
