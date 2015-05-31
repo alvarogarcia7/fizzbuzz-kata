@@ -1,9 +1,9 @@
 package com.example.kata.fizzbuzz;
 
-public class TheNumberStrategy implements  FizzBuzzStrategy {
+public class ResultAsTheNumberStrategy implements  FizzBuzzStrategy {
 	private final FizzBuzzResult fizzBuzzResult;
 
-	public TheNumberStrategy (final FizzBuzzResult fizzBuzzResult) {
+	public ResultAsTheNumberStrategy (final FizzBuzzResult fizzBuzzResult) {
 		this.fizzBuzzResult = fizzBuzzResult;
 	}
 

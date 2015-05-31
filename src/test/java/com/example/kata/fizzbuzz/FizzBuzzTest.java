@@ -21,7 +21,7 @@ public class FizzBuzzTest {
 		this.fizzBuzz = new FizzBuzz(
 				new MultipleOf3AndGreaterThan6Strategy(new MultipleOf(3), fizzBuzzResult),
 				new MultipleOf5Strategy(new MultipleOf(5), fizzBuzzResult),
-				new TheNumberStrategy(fizzBuzzResult));
+				new ResultAsTheNumberStrategy(fizzBuzzResult));
 	}
 
 	@Test
