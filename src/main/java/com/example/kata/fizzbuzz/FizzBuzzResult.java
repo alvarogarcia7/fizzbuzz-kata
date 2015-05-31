@@ -1,7 +1,9 @@
 package com.example.kata.fizzbuzz;
 
 public class FizzBuzzResult {
-	StringBuilder stringBuilder = new StringBuilder();
+
+	private final StringBuilder stringBuilder = new StringBuilder();
+
 	public void append (final String suffix) {
 		stringBuilder.append(suffix);
 	}

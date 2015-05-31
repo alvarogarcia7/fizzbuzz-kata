@@ -23,10 +23,12 @@ public class FizzBuzzResultTest {
 
 	@Test
 	public void should_not_be_empty_after_adding_a_suffix () {
-		
+
 		fizzBuzzResult.append("any");
 
 		assertThat(fizzBuzzResult.isEmpty(), is(false));
 	}
+
+
 
 }
