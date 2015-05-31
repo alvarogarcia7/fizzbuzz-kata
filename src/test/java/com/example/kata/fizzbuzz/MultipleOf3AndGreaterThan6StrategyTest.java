@@ -53,7 +53,7 @@ public class MultipleOf3AndGreaterThan6StrategyTest {
     }
 
     private String fizzBuzz (final int n) {
-                sut.apply(n);
+        sut.apply(n);
         return fizzBuzzResult.get();
     }
 
