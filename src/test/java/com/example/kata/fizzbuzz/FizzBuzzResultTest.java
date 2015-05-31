@@ -8,6 +8,7 @@ import static org.hamcrest.Matchers.is;
 
 public class FizzBuzzResultTest {
 
+	public static final String ANY_STRING = "a";
 	private FizzBuzzResult fizzBuzzResult;
 
 	@Before
@@ -32,9 +33,9 @@ public class FizzBuzzResultTest {
 	@Test
 	public void should_return_what_has_been_added_before () {
 
-		fizzBuzzResult.append("a");
+		fizzBuzzResult.append(ANY_STRING);
 
-		assertThat(fizzBuzzResult.get(), is("a"));
+		assertThat(fizzBuzzResult.get(), is(ANY_STRING));
 	}
 
 }
