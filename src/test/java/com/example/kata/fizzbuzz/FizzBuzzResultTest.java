@@ -29,6 +29,12 @@ public class FizzBuzzResultTest {
 		assertThat(fizzBuzzResult.isEmpty(), is(false));
 	}
 
+	@Test
+	public void should_return_what_has_been_added_before () {
 
+		fizzBuzzResult.append("a");
+
+		assertThat(fizzBuzzResult.get(), is("a"));
+	}
 
 }
