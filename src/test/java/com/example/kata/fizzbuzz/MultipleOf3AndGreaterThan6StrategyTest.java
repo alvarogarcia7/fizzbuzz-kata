@@ -42,6 +42,16 @@ public class MultipleOf3AndGreaterThan6StrategyTest {
         assertThat(result, is("Fizz"));
     }
 
+    @Test
+    public void should_add_nothing_when_the_condition_does_not_hold () {
+        final MultipleOf multipleCollaborator = multipleThatNeverMatchesTheCondition();
+        sut = sutWith(multipleCollaborator);
+
+        final String result = fizzBuzz(6);
+
+        assertThat(result, is(""));
+    }
+
     private String fizzBuzz (final int n) {
                 sut.apply(n);
         return fizzBuzzResult.get();
@@ -50,6 +60,12 @@ public class MultipleOf3AndGreaterThan6StrategyTest {
     private MultipleOf multipleThatAlwaysMatchesTheCondition () {
         final MultipleOf multipleCollaborator = stub(MultipleOf.class);
         doReturn(true).when(multipleCollaborator).isMultipleOf(anyInt());
+        return multipleCollaborator;
+    }
+
+    private MultipleOf multipleThatNeverMatchesTheCondition () {
+        final MultipleOf multipleCollaborator = stub(MultipleOf.class);
+        doReturn(false).when(multipleCollaborator).isMultipleOf(anyInt());
         return multipleCollaborator;
     }
 
