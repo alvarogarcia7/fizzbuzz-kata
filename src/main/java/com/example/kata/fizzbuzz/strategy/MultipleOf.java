@@ -1,4 +1,4 @@
-package com.example.kata.fizzbuzz;
+package com.example.kata.fizzbuzz.strategy;
 
 public class MultipleOf {
     private final int divisor;

@@ -1,5 +1,10 @@
 package com.example.kata.fizzbuzz;
 
+import com.example.kata.fizzbuzz.strategy.FizzBuzzStrategy;
+import com.example.kata.fizzbuzz.strategy.MultipleOf;
+import com.example.kata.fizzbuzz.strategy.MultipleOf3AndGreaterThan6Strategy;
+import com.example.kata.fizzbuzz.strategy.MultipleOf5Strategy;
+import com.example.kata.fizzbuzz.strategy.ResultAsTheNumberStrategy;
 import org.junit.Before;
 import org.junit.Test;
 

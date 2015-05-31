@@ -1,4 +1,6 @@
-package com.example.kata.fizzbuzz;
+package com.example.kata.fizzbuzz.strategy;
+
+import com.example.kata.fizzbuzz.FizzBuzzResult;
 
 public class ResultAsTheNumberStrategy implements  FizzBuzzStrategy {
 	private final FizzBuzzResult fizzBuzzResult;

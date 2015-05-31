@@ -1,5 +1,7 @@
 package com.example.kata.fizzbuzz;
 
+import com.example.kata.fizzbuzz.strategy.MultipleOf;
+import com.example.kata.fizzbuzz.strategy.MultipleOf3AndGreaterThan6Strategy;
 import org.junit.Before;
 import org.junit.Test;
 
