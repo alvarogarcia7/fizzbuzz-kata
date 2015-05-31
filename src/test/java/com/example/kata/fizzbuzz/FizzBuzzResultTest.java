@@ -25,7 +25,7 @@ public class FizzBuzzResultTest {
 	@Test
 	public void should_not_be_empty_after_adding_an_empty_suffix () {
 
-		fizzBuzzResult.append("");
+		append("");
 
 		assertThat(fizzBuzzResult.isEmpty(), is(true));
 	}
@@ -33,7 +33,7 @@ public class FizzBuzzResultTest {
 	@Test
 	public void should_not_be_empty_after_adding_a_suffix () {
 
-		append();
+		append(ANY_STRING);
 
 		assertThat(fizzBuzzResult.isEmpty(), is(false));
 	}
@@ -41,13 +41,13 @@ public class FizzBuzzResultTest {
 	@Test
 	public void should_return_what_has_been_added_before () {
 
-		append();
+		append(ANY_STRING);
 
 		assertThat(fizzBuzzResult.get(), is(ANY_STRING));
 	}
 
-	private void append () {
-		fizzBuzzResult.append(ANY_STRING);
+	private void append (final String anyString) {
+		fizzBuzzResult.append(anyString);
 	}
 
 }
