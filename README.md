@@ -1,4 +1,6 @@
-# fizzbuzz-kata
+# fizzbuzz kata
+
+I've taken the problem from [Coding Dojo's KataFizzBuzz](http://codingdojo.org/cgi-bin/index.pl?KataFizzBuzz)
 
 I've solved the kata in branch master (around commit [915e28](https://github.com/alvarogarcia7/fizzbuzz-kata/tree/915e28c46d462c7b1e16d485bf1ca3e70606e04a)).
 
